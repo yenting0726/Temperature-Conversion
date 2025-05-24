@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><!--要使用bootstrapr加這個-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> <!--要使用javascript加這個-->
+</head>
+
+
+
+<html>
+<style>
+    main{
+        background-color: aqua;
+    }
+</style>
+
+
+<body>
+    <main>
+ 
+   <h1>華氏轉換攝氏</h1>
+  <label >請輸入華氏:</label>
+  <input type="text" id="溫度轉換" name="溫度轉換" value=""><br><br>
+
+  <button type="button" onclick='溫度轉換cf()'>華氏轉攝氏</button>
+  <br><br>
+  <label >攝氏:</label>
+  <input type="text" id="tempf" name="tempf" value=""><br>
+
+
+
+
+  <h1>攝氏轉換華氏</h1>
+  <label >請輸入攝氏:</label>
+  <input type="text" id="溫度轉換fc" name="溫度轉換fc" value=""><br><br>
+
+  <button type="button" onclick='溫度轉換fc()'>攝氏轉華氏</button>
+  <br><br>
+  <label >華氏:</label>
+  <input type="text" id="tempc" name="tempc" value=""><br>
+
+
+
+</body>
+</main>
+
+<script>
+function  溫度轉換cf(){                // Calculate the sum
+  let 華氏轉攝氏 =document.getElementById("溫度轉換").value;
+//   公分轉吋=parseFloat(公分轉吋);   // 字串轉 浮點數 有小點的數字
+
+  華氏轉攝氏=parseInt(華氏轉攝氏);   // 字串轉整數  
+
+  let 攝氏 =5/9*(華氏轉攝氏-32);
+   攝氏 = Math.round(攝氏*100)/100;  //小數點後兩位 
+  console.log(攝氏)
+//   alert(攝氏);
+  document.getElementById("tempf").value =攝氏; //輸出到 text 裡的tempf
+  
+
+//   document.write(溫度轉換cf(攝氏));
+} 
+
+function 溫度轉換fc(){
+    let 攝氏轉華氏 =document.getElementById("溫度轉換fc").value;
+    攝氏轉華氏=parseInt(攝氏轉華氏);
+    let 華氏 =(攝氏轉華氏+40)*1.8-40;
+     華氏 = Math.round(華氏*10)/10;  //小數點後一位 
+    // alert(華氏);
+    document.getElementById("tempc").value = 華氏;
+     // 保留兩位小數
+
+
+}
+
+
+</script>
+</html>
+
+
